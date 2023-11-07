@@ -1,0 +1,148 @@
+body {
+  font-size: 50px;
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.grid-col-span-3 {
+  grid-column: span 3;
+}
+
+.grid-col-span-4 {
+  grid-column: span 4;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 7fr 2.5fr 2.5fr 2fr;
+}
+
+.grid__black {
+  background-color: #0F1629;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid__red {
+  background-color: #EF3D4D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid__blue {
+  background-color: #4C86C6;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid__dark-blue {
+  background-color: #24344B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row: 3 / 5;
+}
+
+.grid__light-blue {
+  background-color: #C1E4E6;
+  grid-column: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid__green {
+  background-color: #4DBD97;
+  grid-column: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid__yellow {
+  background-color: #FFD169;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .grid__black {
+    grid-column: 1 / 5;
+  }
+
+  .grid__dark-blue {
+    grid-column: 2 / span 3;
+    grid-row: 3 / 5
+  }
+  
+  .grid__yellow {
+    grid-column: 2 / span 3;
+    grid-row: 5 / 7;
+  }
+
+  .grid__green {
+    grid-column: 2 / span 2;
+    grid-row: 7 / 9;
+    height: 100px;
+  }
+
+  .grid__light-blue {
+    grid-row: 7 / 9;
+  }
+  .grid__red {
+    grid-column-start: 1;
+    grid-row: 3 / 9
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-rows: 1.5fr 1.5fr 4.5fr 4fr 2fr 2fr 2fr;
+  }
+
+  .grid__red {
+    grid-row: 2;
+    grid-column: 1 / 5;
+  }
+
+  .grid__blue {
+    grid-row: 3;
+    grid-column: 1 / 5;
+  }
+
+  .grid__dark-blue {
+    grid-row: 4;
+    grid-column: 1 / 5;
+  }
+
+  .grid__yellow {
+    grid-row: 5;
+    grid-column: 1 / 5;
+  }
+
+  .grid__green {
+    grid-row: 6;
+    grid-column: 1 / 5;
+  }
+  
+  .grid__light-blue {
+    grid-row: 7;
+    grid-column: 1 / 5;
+  }
+}
